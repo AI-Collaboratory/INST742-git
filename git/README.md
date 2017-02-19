@@ -247,3 +247,4 @@ We just covered very basic functionalities of Git. If your time allows, it's als
 - [How to use MarkDown](http://www.markdowntutorial.com/): when you create a simple but well-styled document for your Git repo page. 
 - [How to resolve conflicts in the Git repo](https://help.github.com/articles/resolving-a-merge-conflict-on-github/): when conflicts occur while collaborating with your friends.
 - [How to make a Git profile](https://help.github.com/articles/about-your-profile/): Your dedicated profile page about your technical work. One of strong portfolios on your resu&#769;me.
+- [How to revert back to a previous state](https://github.com/blog/2019-how-to-undo-almost-anything-with-git): When you want to get back to a previous commit after making a mistake.
