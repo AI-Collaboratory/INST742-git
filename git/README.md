@@ -87,7 +87,7 @@ In order to use Git on your computer, you might need to install an app. After in
 Git clone is required only once for each repository (at the very first time). 
 
 1. On your Git repo page, click "Clone or Download". 
-2. Copy the address. If you have not set your SSH key (or if you don't know what SSH means), copy the address that starts with "https://".
+2. Copy the address. If you have not set your SSH key (or if you don't know what SSH means), copy the address that starts with `https://`.
 3. Open a terminal (on Macs, it is the "Terminal" app, and on Windows, it is the "Git Shell" app), and go to a folder where you want to locate your Git repo's files. In order to move to a designated folder, you need to use Linux commands. For example:
 
 	```
@@ -121,7 +121,7 @@ Git clone is required only once for each repository (at the very first time).
 Mostly, you will work on your computer. In the cloned folder, you can create files that you will work on. Let's try to create a sample file for exercise. 
 
 1. You can create a simple text file using your editor app, or in the command line. 
-	- Open a text editor that you usually use (e.g., UltraEdit, Sublime Text, NotePad++, etc.)
+	- Open a text editor that you usually use (e.g., UltraEdit, Sublime Text, NotePad++, etc.). For Markdown files, you can also use a web-based editor such as [Markdown Editor](https://jbt.github.io/markdown-editor/), and copy the text after you write something down. 
 	- Create a new file.
 	- Write something in it.
 	- Save it in the cloned folder as `[your_name].md`.
@@ -133,7 +133,7 @@ Mostly, you will work on your computer. In the cloned folder, you can create fil
 	```
 	- The result will show that there's a new "untracked" file in the repo. However, this is only new in your local machine. We need to commit this to your Git repo online. 
 
-### Adding and Commiting Your Changes
+### Adding and Commiting Your Changes (Your PC &rarr; Github, whenever you make changes)
 
 1. First of all, you need to register your changes so your files are controled under the Git system. The first step is to "add" your changes.
 Type:
@@ -186,7 +186,7 @@ For your own project, you normally use `commit` and `push` to manage your code, 
 13. You can see your friend's message. If you have any opinion, you can comment on it as well. This conversation can go on as a thread. Once you're satisfied with your friend's contribution, click the `Merge Pull Request` button. Don't click `Comment and Close` button unless you don't want to merge it. Subsequenlty, it is possible that you need to click `Confirm merge` to complete the merge. 
 14. Once it says it was successfully merged, your project is finally contributed by your friend. As a contributor, you also made success in contributing to your friend's project. 
 
-### Pulling Your Repo
+### Pulling Your Repo (Github &rarr; Your PC, whenever there're any changes on Github)
 Your Git repo has been contributed by your friend, but your computer still doesn't have your friend's contribution, because you accepted your friend's pull request online and never downloaded the new changes onto your computer. In this case, you need to "pull" the up-to-date changes. 
 
 1. Go to your original repo folder on your computer (not the folked repo folder) using the `cd` command.
@@ -248,3 +248,9 @@ We just covered very basic functionalities of Git. If your time allows, it's als
 - [How to resolve conflicts in the Git repo](https://help.github.com/articles/resolving-a-merge-conflict-on-github/): when conflicts occur while collaborating with your friends.
 - [How to make a Git profile](https://help.github.com/articles/about-your-profile/): Your dedicated profile page about your technical work. One of strong portfolios on your resu&#769;me.
 - [How to revert back to a previous state](https://github.com/blog/2019-how-to-undo-almost-anything-with-git): When you want to get back to a previous commit after making a mistake.
+
+#Resources
+- [Markdown Editor for Mac: MacDown](https://macdown.uranusjr.com/)
+- [Markdown Editor for Windows: MarkdownPad](http://markdownpad.com/)
+- [Git Tutorial Video](https://www.youtube.com/watch?v=HVsySz-h9r4)
+- [Git Tutorial, Interactive Web](https://try.github.io) 
