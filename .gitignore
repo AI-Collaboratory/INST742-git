@@ -10,8 +10,8 @@ __pycache__/
 # C extensions
 *.so
 
-python/data/*.json
-python/data/*.csv
+python/ex2/data/*.json
+python/ex2/data/*.csv
 
 # Distribution / packaging
 .Python
