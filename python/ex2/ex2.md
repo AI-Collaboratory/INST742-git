@@ -17,4 +17,4 @@
 	- In the menu bar, click `File -> Download as -> HTML`
 	- Open the downloaded file in your browser. It is a pure HTML file automatically generated from Jupyter Notebook. In this way, you can generate a Python-based styled document for web. 
 
-### [Go back to Python Home](../README.md)
+### [Go back to Python Home](../)
