@@ -10,6 +10,8 @@ __pycache__/
 # C extensions
 *.so
 
+# Output files 
+python/ex1/download/*.pdf
 python/ex2/data/*.json
 python/ex2/data/*.csv
 

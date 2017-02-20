@@ -147,8 +147,7 @@ Type:
 	```
 	git commit -m "this is a test file by [your_name]"
 	```
-	The message inside the double quotes is your log message so that other people can understand what you did: You need to briefly explain what changes you made.
-	
+	The message inside the double quotes is your log message so that other people can understand what you did: You need to briefly explain what changes you made.	
 3. Finally, upload your changes to your online repo (in the Github). Type:
  
 	```
@@ -178,7 +177,6 @@ For your own project, you normally use `commit` and `push` to manage your code, 
 	- Open your text editor, create a new file, write something in it, and save it in the folked repo folder with your name (e.g., `[your_name].md`).
 	- Add, commit, and push your change. 
 	- Once pushing your changes, your file is uploaded to your folked Git repo, not your friend's repo. But you want to give your changes to your friend.
-
 9. Go to the web page of your folked repo. There is a button called "New Pull Request". Click it. 
 10. You will see "base fork" and "head fork" in the web page. "Base fork" is the original repo that you want to contribute to (in this case, your friend's repo). "Head fork" is your folked repo that you just made changes. You are basically trying to ask your friend to merge your changes.
 11. If you see the "Create Pull Request" button (in green), click it. Then, you can write down a message about your contribution. Once you make a pull-request, your friend will receive the request from his or her email or on the Github website. **Now, as a contributor, your work is done.** 
