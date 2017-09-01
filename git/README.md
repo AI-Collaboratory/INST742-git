@@ -67,7 +67,7 @@ We will use [Github](http://github.com) in this session since it is most widely 
 # Git Process
 This is the core part of the Git session: how to use the Git?
 
-### Prerequisite
+### Prerequisites
 In order to use Git on your computer, you might need to install an app. After install the required app, every Git process is done either on the Github website or on your command-line app.
 
 - If you're using **Mac**, it is possible that Git is already installed along with Xcode. Try to open "Terminal" app, and type `git` and hit "enter". If not installed, Mac will automatically open a window to install Git. 
@@ -156,9 +156,9 @@ Type:
 	By default, your branch is "master". Later, you can create other branches as needed.	
 	
 ### Collaborating with your Colleague(s)
-For your own project, you normally use `commit` and `push` to manage your code, but not other commands that much. However, Git is often for collaboration with other colleagues. Let's do some exercises on collaborating with your friend. 
+For your own project, you normally use `commit` and `push` to manage your code, and you many not use other commands that much. However, Git is often used for collaboration with other colleagues. Let's do some exercises on collaborating with your friend. 
 
-1. Peer up with a colleague on your next. On the browser, go to your friend's Git repo page by typing your friend's Git repo URL. For example, you may go to `https://github.com/UMD-DCIC/INST742-git`
+1. Pair up with a colleague next to you. On the browser, go to your friend's Git repo page by typing your friend's Git repo URL. For example, you may go to `https://github.com/myeong/INST377`
 2. Click the "Folk" button at the top. 
 3. Once you folk your friend's repo, you just copied your friend's precious project to your account. 
 4. Go to your folked repo page (you can see it in your repo list on your main Git page).
@@ -247,7 +247,7 @@ We just covered very basic functionalities of Git. If your time allows, it's als
 - [How to make a Git profile](https://help.github.com/articles/about-your-profile/): Your dedicated profile page about your technical work. One of strong portfolios on your resu&#769;me.
 - [How to revert back to a previous state](https://github.com/blog/2019-how-to-undo-almost-anything-with-git): When you want to get back to a previous commit after making a mistake.
 
-#Resources
+# Resources
 - [Markdown Editor for Mac: MacDown](https://macdown.uranusjr.com/)
 - [Markdown Editor for Windows: MarkdownPad](http://markdownpad.com/)
 - [Git Tutorial Video](https://www.youtube.com/watch?v=HVsySz-h9r4)
