@@ -208,10 +208,22 @@ Then, it shows how branches were created and merged among each other.
 6. Open the file, write down any one sentence in the Markdown file, and save it. 
 7. In the command line, `git add .`
 8. `git commit -m "my name added"`
-9. `git push origin master
+9. `git push origin master`
 10. On the Github repo page, click "pull request" button and submit your pull request.
 11. The instructor comments on the pull requests and merges them.
-12. You pull down the most recent changes on your computer by typing `git pull origin master` 
+12. Now, your change has been applied to the original project repository.
+13. Check the registered Git addresses by typing `git remote -v`
+14. You want to pull the most recent changes to your local computer. In order to do that, your PC needs to know the address of the original repo. 
+Type `git remote add upstream https://github.com/myeong/INST377.git` 
+15. Check again whether the original repo has been registered.
+	- `git remote -v`
+16. The original repo that you are contributing to is now registered on your local folder. 
+17. You pull down the most recent changes on your computer by typing 
+	- `git fetch upstream`
+18. You merge "upstream" to your local repo.
+	- `git merge upstream/master`
+19. You push the most recent changes to your online repo
+	- `git push origin master`
 
 
 ### Collaborating with your Colleague(s)
