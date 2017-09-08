@@ -67,7 +67,7 @@ We will use [Github](http://github.com) in this session since it is most widely 
 # Git Process
 This is the core part of the Git session: how to use the Git?
 
-### Prerequisite
+### Prerequisites
 In order to use Git on your computer, you might need to install an app. After install the required app, every Git process is done either on the Github website or on your command-line app.
 
 - If you're using **Mac**, it is possible that Git is already installed along with Xcode. Try to open "Terminal" app, and type `git` and hit "enter". If not installed, Mac will automatically open a window to install Git. 
@@ -153,47 +153,8 @@ Type:
 	```
 	git push origin master
 	```
-	By default, your branch is "master". Later, you can create other branches as needed.	
-	
-### Collaborating with your Colleague(s)
-For your own project, you normally use `commit` and `push` to manage your code, but not other commands that much. However, Git is often for collaboration with other colleagues. Let's do some exercises on collaborating with your friend. 
+	By default, your branch is "master". Later, you can create other branches as needed.
 
-1. Peer up with a colleague on your next. On the browser, go to your friend's Git repo page by typing your friend's Git repo URL. For example, you may go to `https://github.com/UMD-DCIC/INST742-git`
-2. Click the "Folk" button at the top. 
-3. Once you folk your friend's repo, you just copied your friend's precious project to your account. 
-4. Go to your folked repo page (you can see it in your repo list on your main Git page).
-5. Go to the terminal, get out of your original repo folder. For example: 
-
-	```
-	cd ..
-	```
-6. Clone your folked repo to your computer. The steps are same to before, but just the address of the repo is different. If not sure, follow the steps in [Cloning a Git Repo](#clone).
-7. Get into the cloned repo folder. Remember, this is a repo "folked" from your friend's account. 
-
-	```
-	cd [name of the folked repo]
-	```
-8. In the folked folder, there is a file that your friend created. Let's create another file. 	
-	- Open your text editor, create a new file, write something in it, and save it in the folked repo folder with your name (e.g., `[your_name].md`).
-	- Add, commit, and push your change. 
-	- Once pushing your changes, your file is uploaded to your folked Git repo, not your friend's repo. But you want to give your changes to your friend.
-9. Go to the web page of your folked repo. There is a button called "New Pull Request". Click it. 
-10. You will see "base fork" and "head fork" in the web page. "Base fork" is the original repo that you want to contribute to (in this case, your friend's repo). "Head fork" is your folked repo that you just made changes. You are basically trying to ask your friend to merge your changes.
-11. If you see the "Create Pull Request" button (in green), click it. Then, you can write down a message about your contribution. Once you make a pull-request, your friend will receive the request from his or her email or on the Github website. **Now, as a contributor, your work is done.** 
-12. As an original project owner, you receive a pull request from your friend. In your original project repo page, you can see there is one pull request. Click "Pull requests" menu. 
-13. You can see your friend's message. If you have any opinion, you can comment on it as well. This conversation can go on as a thread. Once you're satisfied with your friend's contribution, click the `Merge Pull Request` button. Don't click `Comment and Close` button unless you don't want to merge it. Subsequenlty, it is possible that you need to click `Confirm merge` to complete the merge. 
-14. Once it says it was successfully merged, your project is finally contributed by your friend. As a contributor, you also made success in contributing to your friend's project. 
-
-### Pulling Your Repo (Github &rarr; Your PC, whenever there're any changes on Github)
-Your Git repo has been contributed by your friend, but your computer still doesn't have your friend's contribution, because you accepted your friend's pull request online and never downloaded the new changes onto your computer. In this case, you need to "pull" the up-to-date changes. 
-
-1. Go to your original repo folder on your computer (not the folked repo folder) using the `cd` command.
-2. Type this:
-
-	```
-	git pull origin master
-	```
-3. Then, your friend's recent contribution will be downloaded to your computer. 
 
 ### Branching 
 If you want to keep your code safe, and do some experiment with it at the same time, you can use "branching". In your repo, you can create a new branch by typing:
@@ -237,6 +198,75 @@ Then, both of your branches have up-to-date changes.
 It is possible to see graphically how your branching has been processed on the website. Go to your project repo page, and click the "Graphs" menu. In there, click the "Network" button.
 Then, it shows how branches were created and merged among each other. 
 
+
+### Exercise: Folking and Contributing to the Original Code Base
+1. Go to this Git repo web page: `https://github.com/myeong/INST377`
+2. Click "Folk"
+3. Go to your folked repo. It should be something like `https://github.com/[your_id]/INST377`
+4. Clone it to your PC.
+5. Go to `git/introductions/` folder, and create a Markdown file with your last name. `[your_last_name].md`
+6. Open the file, write down any one sentence in the Markdown file, and save it. 
+7. In the command line, `git add .`
+8. `git commit -m "my name added"`
+9. `git push origin master`
+10. On the Github repo page, click "pull request" button and submit your pull request.
+11. The instructor comments on the pull requests and merges them.
+12. Now, your change has been applied to the original project repository.
+13. Check the registered Git addresses by typing `git remote -v`
+14. You want to pull the most recent changes to your local computer. In order to do that, your PC needs to know the address of the original repo. 
+Type `git remote add upstream https://github.com/myeong/INST377.git` 
+15. Check again whether the original repo has been registered.
+	- `git remote -v`
+16. The original repo that you are contributing to is now registered on your local folder. 
+17. You pull down the most recent changes on your computer by typing 
+	- `git fetch upstream`
+18. You merge "upstream" to your local repo.
+	- `git merge upstream/master`
+19. You push the most recent changes to your online repo
+	- `git push origin master`
+
+
+### Collaborating with your Colleague(s)
+For your own project, you normally use `commit` and `push` to manage your code, and you many not use other commands that much. However, Git is often used for collaboration with other colleagues. Let's do some exercises on collaborating with your friend. 
+
+1. Pair up with a colleague next to you. On the browser, go to your friend's Git repo page by typing your friend's Git repo URL. For example, you may go to `https://github.com/myeong/INST377`
+2. Click the "Folk" button at the top. 
+3. Once you folk your friend's repo, you just copied your friend's precious project to your account. 
+4. Go to your folked repo page (you can see it in your repo list on your main Git page).
+5. Go to the terminal, get out of your original repo folder. For example: 
+
+	```
+	cd ..
+	```
+6. Clone your folked repo to your computer. The steps are same to before, but just the address of the repo is different. If not sure, follow the steps in [Cloning a Git Repo](#clone).
+7. Get into the cloned repo folder. Remember, this is a repo "folked" from your friend's account. 
+
+	```
+	cd [name of the folked repo]
+	```
+8. In the folked folder, there is a file that your friend created. Let's create another file. 	
+	- Open your text editor, create a new file, write something in it, and save it in the folked repo folder with your name (e.g., `[your_name].md`).
+	- Add, commit, and push your change. 
+	- Once pushing your changes, your file is uploaded to your folked Git repo, not your friend's repo. But you want to give your changes to your friend.
+9. Go to the web page of your folked repo. There is a button called "New Pull Request". Click it. 
+10. You will see "base fork" and "head fork" in the web page. "Base fork" is the original repo that you want to contribute to (in this case, your friend's repo). "Head fork" is your folked repo that you just made changes. You are basically trying to ask your friend to merge your changes.
+11. If you see the "Create Pull Request" button (in green), click it. Then, you can write down a message about your contribution. Once you make a pull-request, your friend will receive the request from his or her email or on the Github website. **Now, as a contributor, your work is done.** 
+12. As an original project owner, you receive a pull request from your friend. In your original project repo page, you can see there is one pull request. Click "Pull requests" menu. 
+13. You can see your friend's message. If you have any opinion, you can comment on it as well. This conversation can go on as a thread. Once you're satisfied with your friend's contribution, click the `Merge Pull Request` button. Don't click `Comment and Close` button unless you don't want to merge it. Subsequenlty, it is possible that you need to click `Confirm merge` to complete the merge. 
+14. Once it says it was successfully merged, your project is finally contributed by your friend. As a contributor, you also made success in contributing to your friend's project. 
+
+### Pulling Your Repo (Github &rarr; Your PC, whenever there're any changes on Github)
+Your Git repo has been contributed by your friend, but your computer still doesn't have your friend's contribution, because you accepted your friend's pull request online and never downloaded the new changes onto your computer. In this case, you need to "pull" the up-to-date changes. 
+
+1. Go to your original repo folder on your computer (not the folked repo folder) using the `cd` command.
+2. Type this:
+
+	```
+	git pull origin master
+	```
+3. Then, your friend's recent contribution will be downloaded to your computer. 
+
+
 <a name="advanced"></a>
 # Advanced Topics
 We just covered very basic functionalities of Git. If your time allows, it's also very useful to know some more advanced features and topics that you can do using Github. Advanced topics include, but are not limited to:
@@ -247,7 +277,7 @@ We just covered very basic functionalities of Git. If your time allows, it's als
 - [How to make a Git profile](https://help.github.com/articles/about-your-profile/): Your dedicated profile page about your technical work. One of strong portfolios on your resu&#769;me.
 - [How to revert back to a previous state](https://github.com/blog/2019-how-to-undo-almost-anything-with-git): When you want to get back to a previous commit after making a mistake.
 
-#Resources
+# Resources
 - [Markdown Editor for Mac: MacDown](https://macdown.uranusjr.com/)
 - [Markdown Editor for Windows: MarkdownPad](http://markdownpad.com/)
 - [Git Tutorial Video](https://www.youtube.com/watch?v=HVsySz-h9r4)
