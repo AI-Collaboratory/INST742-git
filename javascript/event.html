@@ -16,24 +16,28 @@
 		.round {
 			border-radius: 20px;
 		}
+
+		#square:hover{
+			cursor: pointer;
+		}
 		
 	</style>
 </head>
 
 <body>
-	<div id="square"></div>
+	<div id="square" onclick="show_sentence()"></div>
 
 	<div>
 		<p> Hello, this is inside a PPPPP tag. </p>
 	</div>
 
 	<!-- for your exercise, comment this line out.  -->
-	<button onclick="show_sentence()">Put the Sentence</button>
+	<!-- <button onclick="show_sentence()">Put the Sentence</button> -->
 
 <script>
 
 function show_sentence(){
-	document.getElementById("square").innerHTML = document.getElementsByTagName("p")[0].innerHTML;	
+	document.getElementById("square").innerHTML = document.getElementsByTagName("p")[0].innerHTML;
 }
 
 </script>

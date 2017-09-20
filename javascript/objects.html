@@ -1,0 +1,54 @@
+<html>
+<head>
+	<style type="text/css">
+		.square {
+			margin-top: 50px;
+			margin-left: 100px;			
+		}
+
+		div {
+			margin-bottom: 20px;
+		}
+		
+	</style>
+</head>
+
+<body>
+
+	<div id="container"></div>
+
+<script>
+
+
+
+function Square (width, height, color, classname){
+	this.width = width;
+	this.height = height;
+	this.background = color;
+
+	// creates a div tag inside the "container" object.
+	sq = document.getElementById("container").appendChild(document.createElement("div"))
+	sq.setAttribute("class", classname);
+	sq.setAttribute("style", "height:" + this.height);
+	sq.style.width = this.width;
+	sq.style.background = this.background;
+
+	this.changeColor = function(c){
+		this.background = c;
+		sq.style.background = this.background;
+	}
+	// Task 2
+}
+
+s1 = new Square("200px", "50px", "grey", "square")
+
+
+// Task 1
+
+// Task 2
+
+
+</script>
+
+</body>
+</html>
