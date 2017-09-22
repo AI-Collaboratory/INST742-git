@@ -21,48 +21,31 @@
 
 
 
-function Square (width, height, color, classname, left, top){
+function Square (width, height, color, classname){
 	this.width = width;
 	this.height = height;
-	this.background = color;	
-	this.left = left;
-	this.top = top;
+	this.background = color;
 
 	// creates a div tag inside the "container" object.
-	this.sq = document.getElementById("container").appendChild(document.createElement("div"))
-	this.sq.setAttribute("class", classname);
-	this.sq.setAttribute("style", "height:" + this.height);
-	this.sq.style.width = this.width;
-	this.sq.style.background = this.background;
-
-	// task 4
-	this.sq.style.position = "absolute";
-	this.sq.style["margin-left"] = this.left;
-	this.sq.style["margin-top"] = this.top;
+	sq = document.getElementById("container").appendChild(document.createElement("div"))
+	sq.setAttribute("class", classname);
+	sq.setAttribute("style", "height:" + this.height);
+	sq.style.width = this.width;
+	sq.style.background = this.background;
 
 	this.changeColor = function(c){
 		this.background = c;
-		this.sq.style.background = this.background;
+		sq.style.background = this.background;
 	}
-	// Task 3
-	this.putSentence = function(s){
-		this.sq.innerHTML = s;
-	}
-
+	// Task 2
 }
 
-s1 = new Square("200px", "50px", "grey", "square", "1px", "2px");
+s1 = new Square("200px", "50px", "grey", "square")
+
 
 // Task 1
-s1.changeColor("blue");
 
 // Task 2
-s2 = new Square("200px", "50px", "orange", "square", "100px", "200px");
-
-// task 3
-s1.putSentence("hello");
-s2.putSentence("hi");
-
 
 
 </script>
