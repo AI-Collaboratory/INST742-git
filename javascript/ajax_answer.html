@@ -49,7 +49,7 @@
 
 
 function trigger(){
-	showSentence("json/data.json", test2);
+	showSentence("json/data.json", test1);
 }
 
 function showSentence(url, func){
@@ -63,8 +63,25 @@ function showSentence(url, func){
 	xhttp.send();
 }
 
-function test1(xhttps){
-	document.getElementById("square").innerHTML = xhttps.responseText;
+function test1(xhttps){	
+	// parsing JSON
+	var objects = JSON.parse(xhttps.responseText);
+	var t = "<div>";
+	
+	// looping througoh the object
+	for (key in objects){		
+		for (k in objects[key]){
+			t+= "<div class='row'><span><strong>" + k + "</strong></span>:<span>" + objects[key][k] + "</span></div>";
+		}		
+	}
+	t += "<div>";
+	
+	// put the generated text
+	document.getElementById("square").innerHTML = t;
+
+	// change the square size dynamically 
+	document.getElementById("square").setAttribute("style", "height:auto; width:auto;");
+	
 }
 
 function test2(xhttps){
