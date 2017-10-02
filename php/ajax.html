@@ -49,7 +49,7 @@
 
 
 function trigger(){
-	showSentence("json/data.json", test2);
+	showSentence("ex.php", test2);
 }
 
 function showSentence(url, func){
@@ -68,8 +68,13 @@ function test1(xhttps){
 }
 
 function test2(xhttps){
-	document.getElementById("square").innerHTML = xhttps.responseText;
+	var text = xhttps.responseText;
+	var tokens = text.split("<br>");
+	console.log(tokens);
+
+	document.getElementById("square").innerHTML = tokens[0];
 	document.getElementById("square").style.color = "green";
+
 }
 
 </script>
