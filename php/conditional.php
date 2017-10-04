@@ -5,6 +5,14 @@ div {
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
+
+table td{
+	border: 1px solid black;
+}
+th {
+	background: yellow;
+	border: 1px solid black;
+}
 </style>
 <body>
 
@@ -39,13 +47,39 @@ var_dump($arr);
 $organizations = file_get_contents('json/data.json');
 
 # <pre> tag makes it easy to read a large array
-print ("<pre>");
-print_r($organizations);
-print ("</pre>");
+// print ("<pre>");
+// print_r($organizations);
+// print ("</pre>");
 
 echo "Parsing a JSON file to a PHP array.";
 $json = json_decode($organizations, true);
-print ("<pre>");
-print_r($json);
-print ("</pre>");
+// print ("<pre>");
+// print_r($json);
+// print ("</pre>");
+
+# Task 2: Show only "org name" and "city" in the loop.
+echo "<table>";
+echo "<tr><th>Organization Name</th><th>City</th></tr>";
+
+foreach ($json as $key => $value){
+	// echo "<br>This is the start of a new org <br>";
+	echo "<tr>";
+	foreach($value as $k => $v){
+		if ($k == "Organization Name" || $k== "City"){
+			echo "<td>". $v . "</td>";		
+		}		
+	}
+	echo "</tr>";
+}
+
+echo "</table>";
+
+
+
+
+
+
+
+
+
 ?>

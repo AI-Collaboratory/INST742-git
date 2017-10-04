@@ -1,0 +1,55 @@
+<html>
+<head>
+
+
+</head>
+<body>
+
+<!-- Basic text forms -->
+<form>
+	First Name: <input type="text" name="firstname"><br>
+	Last Name: <input type="text" name="lastname"> 	
+</form>
+
+<br><br>
+
+<!-- Many types of inputs -->
+<form>
+	<input type="number" name="number"><br>
+	<input type="password" name="pass"><br>
+	<input type="submit" name="submit"><br>
+	<input type="reset" name="reset"><br>	
+	<input type="checkbox" name="checkbox" value="check1"><br>
+	<input type="checkbox" name="checkbox" value="check2"><br>
+	<input type="date" name="date"><br>
+	<input type="range" name="range"><br>
+</form>
+
+<!-- Radio Button -->
+<form>
+	<input type="radio" name="opt" value="1" checked> 1<br>
+	<input type="radio" name="opt" value="2"> 2<br>
+	<input type="radio" name="opt" value="3"> 3<br><br>
+	<input type="submit"><br>
+</form>
+
+<!-- Form attributes -->
+<form>
+	Disabled: <input type="text" name="dis" disabled><br>
+	Read only: <input type="text" name="read" value="read only" readonly> <br>
+	Setting the Size: <input type="text" name="size" size="100"> <br>
+	Auto focus: <input type="text" name="size" autofocus> <br>
+	Placeholder: <input type="text" name="place" placeholder="hi"> <br>
+</form>
+
+<!-- Get and Post methods to send data to a PHP file -->
+<form action="./name.php" method="GET">
+	First Name: <input type="text" name="first_name"><br>
+	Last name: <input type="text" name="last_name">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>
