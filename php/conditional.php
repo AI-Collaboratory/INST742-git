@@ -62,7 +62,7 @@ echo "<table>";
 echo "<tr><th>Organization Name</th><th>City</th></tr>";
 
 foreach ($json as $key => $value){
-	// echo "<br>This is the start of a new org <br>";
+	echo "<br>This is the start of a new org <br>";
 	echo "<tr>";
 	foreach($value as $k => $v){
 		if ($k == "Organization Name" || $k== "City"){
