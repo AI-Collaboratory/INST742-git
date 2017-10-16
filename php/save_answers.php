@@ -41,10 +41,23 @@ if ($answer1 == "yes"){
 
 echo "<br><br>";
 
+// You need to save the data into the database.
+$sql = "INSERT INTO alcohol (adult, alcohol_freq) VALUES ('$answer1', '$answer1_1');";
+query_to_db($conn, $sql);
 
-echo "THANKS FOR YOUR ANSWERS";
 
+
+echo "<br>THANKS FOR YOUR ANSWERS";
 
 mysqli_close($conn);
+
+
+
+
+
+
+
+
+
 
 ?>
