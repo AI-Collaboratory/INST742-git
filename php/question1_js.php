@@ -15,6 +15,24 @@
 		visibility: hidden;
 	}
 </style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+	document.getElementById("q11").setAttribute("class", "hide");
+}, false); 
+
+
+function check_q1(){
+	var x = document.forms["q1"]["q1"].value;
+	var q11 = document.forms["q1"]["q11"].value;
+
+    if (x == "yes" && q11=="") {
+		document.getElementById("q11").removeAttribute('class');
+		return false;
+    } else {    	    	
+		return true;
+    }    
+}
+</script>
 </head>
 <body>
 
@@ -44,21 +62,7 @@
 
 
 
-<script>
-document.getElementById("q11").setAttribute("class", "hide");
 
-function check_q1(){
-	var x = document.forms["q1"]["q1"].value;
-	var q11 = document.forms["q1"]["q11"].value;
-
-    if (x == "yes" && q11=="") {
-		document.getElementById("q11").removeAttribute('class');
-		return false;
-    } else {    	    	
-		return true;
-    }    
-}
-</script>
 
 
 

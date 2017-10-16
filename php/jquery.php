@@ -5,12 +5,13 @@
 
 <body>
 <div id="test" class="dd">	
-	<p class="p"></p>	
+	<p class="abc"></p>	
 	<p class="ppp">This is the second P tag.</p>	
 	<span class="dd">This is a span tag.</span></div>
+
 <script>
 	// document.getElementsByClassName("p")[0].innerHTML = "hi";
-	$("p.p").html("hi");
+	$("#test .abc").html("<strong>hi</strong>");
 </script>
 </body>
 </html>
