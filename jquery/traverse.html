@@ -1,0 +1,97 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style type="text/css">
+
+	div{
+		margin: 0px 0px 0px 40px;	
+		font-size: 20px;	
+		width: 200px;
+	}
+
+	table td, th {
+		border: 1px solid black;
+		cursor: pointer;
+		padding: 5px 5px 5px 5px;
+	}
+	table {
+		width: 305px;
+
+	}
+
+	th {
+		background: gray;
+	}
+
+	th:hover{
+		cursor: pointer;
+	}
+
+	p {
+		margin: 0;
+		padding: 20px 0 20px 0;
+	}
+
+	.added {
+		background: yellow;
+		border: 1px solid blue;
+	}
+
+	#find {
+		background: orange;
+		border: 1px solid black;
+		text-align: center;
+		cursor: pointer;
+		margin-top: 20px;
+	}
+	
+</style>
+<script>
+
+
+$(document).ready(function(){
+	
+	// Select a parent of a clicked row
+	$(".row td").click(function(){				
+		$(this).parents("#table").after("<div class='added'>Clicked: " + $(this).text() + "</div>");
+		// $(this).parents("#table").append("<div class='added'>Clicked: " + $(this).text() + "</div>");
+		// $(this).parents("#table").before("<div class='added'>Clicked: " + $(this).text() + "</div>");
+	});
+
+	$("#find").click(function(){
+		// $("#table").find(".row").css("background", "red"); // finding elements by a CSS selector
+		$("td:contains('Amy')").css("background", "red"); // finding an element based on contents
+		// $("#table").children(".row").css("background", "red"); // doesn't work. Finding elements among the direct children
+		// $("#title").next().css("background", "red");  // selecting the next element.
+		// $("#title").siblings().css("background", "red"); //selecting all the siblings
+	})
+
+});
+
+
+</script>
+</head>
+
+<body>
+	<div id="table">
+		<table>
+			<tr id="title">
+				<th> ID </th><th>Name</th><th>Age</th>
+			</tr>			
+			<tr class="row">
+				<td> 1 </td><td>John Smith</td><td>20</td>
+			</tr>
+			<tr class="row">
+				<td> 2 </td><td>Amy Johnson</td><td>20</td>
+			</tr>
+			<tr class="row">
+				<td> 3 </td><td>Kevin Williams</td><td>20</td>
+			</tr>		
+		</table>
+	</div>
+	<div id="find">FIND</div>
+
+	
+
+</body>
+</html>
