@@ -46,15 +46,15 @@ $(document).ready(function(){
 	show = true;
 
 	// Show and Hide
-	$("#title").click(function(){		
-		if (show){
-			$(".row").hide();
-			show = false;
-		} else {
-			$(".row").show();
-			show = true;
-		}
-	});
+	// $("#title").click(function(){		
+	// 	if (show){
+	// 		$(".row").hide();
+	// 		show = false;
+	// 	} else {
+	// 		$(".row").show();
+	// 		show = true;
+	// 	}
+	// });
 
 	// Toggle
 	// $("#title").click(function(){				
@@ -63,36 +63,39 @@ $(document).ready(function(){
 
 	// Fade In and Out
 	// $("#title").click(function(){				
-	// 	if (show){
-	// 		$(".row").fadeOut();
-	// 		show = false;
-	// 	} else {
-	// 		$(".row").fadeIn(2000); // in ms
-	// 		show = true;
-	// 	}
+	// 	// if (show){
+	// 	// 	$(".row").fadeOut(1000);
+	// 	// 	show = false;
+	// 	// } else {
+	// 	// 	$(".row").fadeIn(5000); // in ms
+	// 	// 	show = true;
+	// 	// }
+	// 	$(".row").fadeToggle(1000);
 	// });
 
 	// Slide Down and Up
 	// $("#title").click(function(){				
-	// 	if (show){
-	// 		$("#details").slideDown("slow");
-	// 		show = false;
-	// 	} else {
-	// 		$("#details").slideUp(2000); // in ms
-	// 		show = true;
-	// 	}
+	// 	// if (show){
+	// 	// 	$("#details").slideDown("slow");
+	// 	// 	show = false;
+	// 	// } else {
+	// 	// 	$("#details").slideUp(2000); // in ms
+	// 	// 	show = true;
+	// 	// }
+	// 	$("#details").slideToggle(2000);
 	// });
 
 	// Animate
-	// $("#title").click(function(){				
-	// 	$(".row").animate({
-	// 			height: '100px',
-	// 			fontSize: '30px'
-	// 		}, 2000, function() {
-	// 			/* stuff to do after animation is complete */
-	// 			$("#details").slideDown("slow");
-	// 		});;
-	// });
+	$("#title").click(function(){				
+		$(".row").animate({
+				height: '100px',
+				fontSize: '30px',
+				color: 'blue'
+			}, 2000, function() {
+				/* stuff to do after animation is complete */
+				$("#details").slideDown("slow");
+			});;
+	});
 
 });
 

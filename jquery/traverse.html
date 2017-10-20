@@ -53,14 +53,14 @@ $(document).ready(function(){
 	
 	// Select a parent of a clicked row
 	$(".row td").click(function(){				
-		$(this).parents("#table").after("<div class='added'>Clicked: " + $(this).text() + "</div>");
+		// $(this).parents("#table").after("<div class='added'>Clicked: " + $(this).text() + "</div>");
 		// $(this).parents("#table").append("<div class='added'>Clicked: " + $(this).text() + "</div>");
-		// $(this).parents("#table").before("<div class='added'>Clicked: " + $(this).text() + "</div>");
+		$(this).parents("#table").before("<div class='added'>Clicked: " + $(this).text() + "</div>");
 	});
 
 	$("#find").click(function(){
 		// $("#table").find(".row").css("background", "red"); // finding elements by a CSS selector
-		$("td:contains('Amy')").css("background", "red"); // finding an element based on contents
+		$("td:contains('Smith')").css("background", "red"); // finding an element based on contents
 		// $("#table").children(".row").css("background", "red"); // doesn't work. Finding elements among the direct children
 		// $("#title").next().css("background", "red");  // selecting the next element.
 		// $("#title").siblings().css("background", "red"); //selecting all the siblings
