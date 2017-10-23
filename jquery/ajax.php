@@ -41,88 +41,90 @@ function showSentence(){
 $(document).ready(function(){
 
 	
-	// $("#square").click(function(){
-	// 	// // Using "GET" method
-	// 	// $.get("ajax_test.php",
-	// 	// 	{
-	// 	//   		name: "John Smith"
-	// 	// 	}, 
-	// 	// 	function(response, status){
-	// 	// 		$("#square").text(status + ": " + response);
-	// 	// 	}
-	// 	// );
+	$("#square").click(function(){
+		// Using "GET" method (1)
+		// $.get("ajax_test.txt",function(response, status){
+		// 	$("#square").text(status + ": " + response);
+		// });
 
-	// 	// // Using "POST" method
-	// 	// $.post("ajax_test.php",
-	// 	// 	{
-	// 	//   		name: "John Smith"
-	// 	// 	}, 
-	// 	// 	function(response, status){
-	// 	// 		$("#square").text(status + ": " + response);
-	// 	// 	}
-	// 	// );
+		// Using "GET" method (2)
+		// $.get("ajax_test.php",
+		// 	{
+		//   		name: "John Smith"
+		// 	}, 
+		// 	function(response, status){
+		// 		$("#square").text(status + ": " + response);
+		// 	}
+		// );
 
-	// 	// // Primitive function 
-	// 	// $.ajax({
-	// 	// 	url: "ajax_test.php",
-	// 	// 	data: {name: "John Smith"},
-	// 	// 	type: "POST",
-	// 	// 	success: function(response, status){
-	// 	// 		$("#square").text(status + ": " + response);
-	// 	// 	}
-	// 	// });
+		// // Using "POST" method
+		// $.post("ajax_test.php",
+		// 	{
+		//   		name: "John Smith"
+		// 	}, 
+		// 	function(response, status){
+		// 		$("#square").text(status + ": " + response);
+		// 	}
+		// );
 
-
-	// 	// The simplest form of jQuery AJAX
-	// 	// $(this).load("ajax_test.txt");
-
-	// 	// // A bit advanced form of "load"
-	// 	// $(this).load("ajax_test.php", 
-	// 	// 	{
-	// 	// 		name: "John Smith"
-	// 	// 	},
-	// 	// 	function (response, status, xhr){}
-	// 	// );
+		// // Primitive function 
+		// $.ajax({
+		// 	url: "ajax_test.php",
+		// 	data: {name: "John Smith"},
+		// 	type: "GET",
+		// 	success: function(response, status){
+		// 		$("#square").text(status + ": " + response);
+		// 	}
+		// });
 
 
-	// 	// // 1. It is possible to save an AJAX object in a variable.
-	// 	// // 2. How do you make sure the order between request1 and request2?
-	// 	// var request1 = $.ajax({
-	// 	// 	url: "ajax_test.php",
-	// 	// 	data: {name: "John Smith"},
-	// 	// 	type: "POST"			
-	// 	// });
+		// // The simplest form of jQuery AJAX
+		// $(this).load("ajax_test.php");
 
-	// 	// var request2 = $.ajax({
-	// 	// 	url: "ajax_test.txt",
-	// 	// 	data: {name: "John Smith"},
-	// 	// 	type: "POST"			
-	// 	// });
+		// // A bit advanced form of "load"
+		// $(this).load("ajax_test.php", 
+		// 	{
+		// 		name: "John Smith"
+		// 	},
+		// 	function (response, status, xhr){}
+		// );
+
+
+		// 1. It is possible to save an AJAX object in a variable.
+		// 2. How do you make sure the order between request1 and request2?
+		var request1 = $.ajax({
+			url: "ajax_test.php",
+			data: {name: "John Smith"},
+			type: "POST"			
+		});
+
+		var request2 = $.ajax({
+			url: "ajax_test.txt",
+			data: {name: "John Smith"},
+			type: "POST"			
+		});
 		
-	// 	// request1.done(function(response, status){
-	// 	// 	$("#square").text(status + ": " + response);
-	// 	// 	$("#square").css("color", "red");
-	// 	// });
+		request1.done(function(response, status){
+			$("#square").text(status + ": " + response);
+			$("#square").css("color", "red");
+		});
 
-	// 	// request1.fail(function(xhr, status){
-	// 	// 	alert ("Failed: " + status);
-	// 	// });
+		request1.fail(function(xhr, status){
+			alert ("Failed: " + status);
+		});
 
-	// 	// request2.then(function(response, status){
-	// 	// 	$("#square").text(status + ": " + response);
-	// 	// 	$("#square").css("color", "green");
-	// 	// });
+		request1.then(function(){
+			$("#square").css("color", "blue");
+		});
 
-	// 	// request1.then(function(){
-	// 	// 	$("#square").css("color", "blue");
-	// 	// });
-
-		
-
+		request2.then(function(response, status){
+			$("#square").text(status + ": " + response);
+			$("#square").css("color", "green");
+		});
 
 		
 
-	// });
+	});
 
 
 });
@@ -134,8 +136,8 @@ $(document).ready(function(){
 
 <body>
 	
-	<div id="square" onclick="showSentence()"></div>	
-	<!-- <div id="square"></div> -->
+	<!-- <div id="square" onclick="showSentence()"></div>	 -->
+	<div id="square"></div>
 	
 
 
