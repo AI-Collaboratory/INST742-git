@@ -113,14 +113,18 @@ $(document).ready(function(){
 			alert ("Failed: " + status);
 		});
 
-		request1.then(function(){
+		
+
+		$.when(request1.then(function(){
 			$("#square").css("color", "blue");
+		})).done(function(){
+			request2.then(function(response, status){
+				$("#square").text(status + ": " + response);
+				$("#square").css("color", "green");
+			});
 		});
 
-		request2.then(function(response, status){
-			$("#square").text(status + ": " + response);
-			$("#square").css("color", "green");
-		});
+		
 
 		
 

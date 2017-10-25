@@ -87,7 +87,7 @@ $(document).ready(function(){
 				height: '100px',
 				fontSize: '30px',
 				color: 'blue',
-				backgroundColor: 'gray'
+				backgroundColor: 'red'
 			}, 2000, function() {
 				/* stuff to do after animation is complete */
 				$("#details").slideDown("slow");

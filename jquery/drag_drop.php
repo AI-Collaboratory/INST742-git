@@ -39,6 +39,8 @@
   <script>
   $( function() {
     $( ".draggable" ).draggable({ revert: "invalid" });   
+
+    $("#message").hide();
  
     $( "#droppable" ).droppable({
       classes: {
@@ -55,7 +57,7 @@
           ui.draggable.draggable( "option", "revert", true );          
           return false;
         }
-        
+
         $( "#list" ).addClass( "ui-state-highlight" ).append("<li>" + info + "</li>");
         ui.draggable.hide();
 
@@ -65,7 +67,7 @@
             age: age,
             freq: freq
           }, function(data, status){
-            $("#message").html(data);
+            $("#message").html(data).fadeIn(2000).delay(3000).fadeOut(2000);
           }
         );
       }

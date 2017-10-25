@@ -39,10 +39,12 @@ if ($age > 21){
 	echo "The user's weekly alcohol consumption frequecy: " . $freq . " times/week. ";
 }
 
+$answer1 = $age > 21 ? "yes" : "no";
+
 
 // // You need to save the data into the database.
-// $sql = "INSERT INTO alcohol (adult, alcohol_freq) VALUES ('$answer1', '$answer1_1');";
-// query_to_db($conn, $sql);
+$sql = "INSERT INTO alcohol (adult, alcohol_freq) VALUES ('$answer1', '$freq');";
+query_to_db($conn, $sql);
 
 
 
