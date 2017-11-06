@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Layout</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <style>    
+    /* Apply this CSS only when the width is more than 1400px */
+    @media (min-width: 1400px) { 
+      .container{
+         width: 1250px;
+      }
+    }
+
+    .container-fluid{
+        height: 100px;
+        background: red;       
+    }
+
+    /* Apply this CSS only when the width is less than 1000px and the contents are on screen */
+    @media only screen and (max-width: 1000px) { 
+      .container-fluid{
+         margin: 30px 30px 30px 30px;
+         background: yellow;
+      }
+    }
+    .container{
+        min-height: 100px;
+        background: blue;       
+    }
+    .row div{
+      margin: 10px;
+      background: white;
+    }
+    
+    </style>
+  </head>
+  <body>
+
+    <div class="container" >    
+    </div>
+
+    <div class="container-fluid" >    
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          A small column
+        </div>
+        <div class="col-sm">
+          A small column
+        </div>        
+      </div>
+      <div class="row">
+        <div class="col-md">
+          A medium column
+        </div>
+        <div class="col-4">
+          a Size-4 Column
+        </div>       
+      </div>
+    </div>
+
+    
+  </body>
+</html>
