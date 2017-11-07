@@ -42,30 +42,38 @@ $(document).ready(function(){
 // bar chart
 
 	// Data 
-	var dataArray = [];
-	
+	// var dataArray = [];
+		
 	var svg = d3.select(".bar");
 
-	// Creating bars
-	svg.selectAll("rect")
-		.data(dataArray)
-		.enter()
-		.append("rect")
-		.attr("class", "bar")
-		.attr("height", function(d, i) {return (d * 10)})
-		.attr("width","30")
-		.attr("x", function(d, i) {return (i * 50) + 25})
-		.attr("y", function(d, i) {return 400 - (d * 10)});
+	d3.csv("query.php", function(error, dataArray) {
+	  if (error) throw error;
+	  	console.log(dataArray);
+		  // Creating bars
+		svg.selectAll("rect")
+			.data(dataArray)
+			.enter()
+			.append("rect")
+			.attr("class", "bar")
+			.attr("height", function(d, i) {return (d.num_customers * 10)})
+			.attr("width","10")
+			.attr("x", function(d, i) {return (i * 10) + 25})
+			.attr("y", function(d, i) {return 400 - (d.num_customers * 10)});
 
-	// Creating numbers for each bar
-	svg.selectAll("text")
-		.data(dataArray)
-		.enter()
-		.append("text")
-		.text(function(d) {return d})
-		.attr("class", "text")
-		.attr("x", function(d, i) {return (i * 50) + 30})
-		.attr("y", function(d, i) {return 420 - (d * 10)});
+		// Creating numbers for each bar
+		svg.selectAll("text")
+			.data(dataArray)
+			.enter()
+			.append("text")
+			.text(function(d) {return d.country_id})
+			.attr("class", "text")
+			.attr("x", function(d, i) {return (i * 50) + 30})
+			.attr("y", function(d, i) {return 420 - (d.num_customers * 10)});
+
+	  
+	});
+	
+	
 	
 });
 
