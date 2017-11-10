@@ -1,0 +1,58 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style type="text/css">
+	#square {
+		margin-top: 20px;
+		margin-left: 100px;
+		min-height: 200px;
+		min-width: 200px;
+		background: orange;
+	}
+
+	div {
+		margin-bottom: 20px;
+	}
+
+	.round {
+		border-radius: 20px;
+	}
+
+	#square:hover{
+		cursor: pointer;
+	}
+	
+</style>
+<script>
+
+
+$(document).ready(function(){
+
+	
+	$("#square").click(function(){
+		$.getJSON("", function(result){
+	        $.each(result, function(i, field){
+	            
+	        });
+	    });
+
+
+	});
+
+
+});
+
+
+
+</script>
+</head>
+
+<body>
+	
+	<!-- <div id="square" onclick="showSentence()"></div>	 -->
+	<div id="square"></div>
+	
+
+
+</body>
+</html>
