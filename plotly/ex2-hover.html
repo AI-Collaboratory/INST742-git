@@ -2,13 +2,13 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Second Plotly</title>
+  <title>Second Plotly with Tooltip</title>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
   <p>
-    Second Plotly chart
+    Second Plotly chart with Tooltip
   </p>
   <div id="chart"></div>
 </body>
@@ -32,6 +32,8 @@
               name: continent,
               x: unpack(rowsFiltered, 'lifeExp'),
               y: unpack(rowsFiltered, 'gdpPercap'),
+              text: unpack(rowsFiltered, 'country'),
+              hoverinfo: 'text',
         marker: {
                     sizemode: 'area',
                     size: unpack(rowsFiltered, 'pop'),
