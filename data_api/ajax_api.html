@@ -30,15 +30,17 @@ $(document).ready(function(){
 
 	
 	$("#square").click(function(){
-		$.getJSON("", function(result){
+		$.getJSON("https://api.usa.gov/jobs/search.json?data", function(result){
+
 	        $.each(result, function(i, field){
-	            
+	            console.log(field);
+	            $("#square").append(field.organization_name + ", " + field.position_title + "<br>");
 	        });
+
 	    });
 
 
 	});
-
 
 });
 
