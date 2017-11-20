@@ -37,7 +37,7 @@ $(document).ready(function($) {
 	// var basemap = new L.Google('ROADMAP');
 
 	// If you want some artistic: Stamen Basemap
-	// var basemap = new L.StamenTileLayer(['terrain']); // "toner", "watercolor"...
+	// var basemap = new L.StamenTileLayer(['watercolor']); // "toner", "watercolor"...
 
 
 	// Adding the basemap layer to the Leaflet container.
@@ -45,15 +45,15 @@ $(document).ready(function($) {
 
 
 	// // Adding Markers
-	// var marker = L.marker([35.577, -82.556]).bindPopup('This is a random spot.');
-	// var marker2 = L.marker([35.570, -82.550]);
+	var marker = L.marker([35.577, -82.556]).bindPopup("hello");
+	var marker2 = L.marker([35.570, -82.550]);
 
 	// // Polygon
-	// var latlngs = [[35.580, -82.560],[35.581, -82.562],[35.583, -82.558]];
-	// var polygon = L.polygon(latlngs, {color: 'red'});
+	var latlngs = [[35.580, -82.560],[35.581, -82.562],[35.583, -82.558]];
+	var polygon = L.polygon(latlngs, {color: 'red'});
 	
-	// var cities = L.layerGroup([marker, marker2, polygon]);
-	// map.addLayer(cities);
+	var cities = L.layerGroup([marker, marker2, polygon]);
+	map.addLayer(cities);
 });
 
 </script>
