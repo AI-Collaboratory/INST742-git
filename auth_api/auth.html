@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Authorization</title>
+    <meta name="google-signin-scope" content="profile email">
+
+    <!-- Google Client ID -->
+    <meta name="google-signin-client_id" content="168341187646-tb0cde4tr3e1rn9gu94qf72a7f6b8ehr.apps.googleusercontent.com">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Adding Gogole API Library -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+<style>    
+.container{
+    min-height: 100px;
+    background: yellow;       
+}
+#output{
+  height: 200px;
+  width: 500px;
+  background: gray;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+</style>
+<script>
+
+// Called when signed in
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); 
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); 
+
+  var auth2 = gapi.auth2.getAuthInstance();
+
+  if (auth2.isSignedIn.get()) {
+  var profile = auth2.currentUser.get().getBasicProfile();
+    $(".container").html("logged in!!");
+  }
+}
+
+
+
+jQuery(document).ready(function($) {
+  $("#output").click(function(){  
+
+    var auth2 = gapi.auth2.getAuthInstance();  
+
+    // Check if a user is signed in...
+    // If so, output the name of the user to the yellow box.
+    if (auth2.isSignedIn.get()) {
+      var profile = auth2.currentUser.get().getBasicProfile();
+      $(".container").html(profile.getName() + " is logged in.");
+    } else {
+      $(".container").html("Nobody is logged in...");
+    }
+  });
+});
+
+
+
+</script>
+</head>
+  <body>
+    <!-- Sign-in button -->
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    <div class="container" >  
+      
+    </div>
+
+    <div id="output">  
+      Click here if you are logged in.
+    </div>
+    
+  </body>
+</html>
