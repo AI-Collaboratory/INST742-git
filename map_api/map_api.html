@@ -20,7 +20,7 @@
 
 $(document).ready(function($) {
 	// setting the default view point for the map, and the zoom level
-	var map = L.map('map').setView([35.577, -82.556], 14);	
+	var map = L.map('map').setView([38.8936, -77.0364], 14);	
 
 	// OpenStreetMap
 	var basemap = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -45,15 +45,15 @@ $(document).ready(function($) {
 
 
 	// // Adding Markers
-	var marker = L.marker([35.577, -82.556]).bindPopup("hello");
-	var marker2 = L.marker([35.570, -82.550]);
+	var marker = L.marker([38.8936, -77.0364]).bindPopup("hello");
+	// var marker2 = L.marker([35.570, -82.550]);
 
 	// // Polygon
-	var latlngs = [[35.580, -82.560],[35.581, -82.562],[35.583, -82.558]];
-	var polygon = L.polygon(latlngs, {color: 'red'});
+	// var latlngs = [[35.580, -82.560],[35.581, -82.562],[35.583, -82.558]];
+	// var polygon = L.polygon(latlngs, {color: 'red'});
 	
-	var cities = L.layerGroup([marker, marker2, polygon]);
-	map.addLayer(cities);
+	// var cities = L.layerGroup([marker, marker2, polygon]);
+	map.addLayer(marker);
 });
 
 </script>
