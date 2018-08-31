@@ -1,0 +1,131 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style type="text/css">
+
+	div{
+		margin: 0px 0px 0px 40px;	
+		font-size: 20px;	
+	}
+
+	table td, th {
+		border: 1px solid black;
+		
+		padding: 5px 5px 5px 5px;
+	}
+	table {
+		width: 305px;
+
+	}
+
+	th {
+		background: gray;
+	}
+
+	th:hover{
+		cursor: pointer;
+	}
+
+	#details {
+		background: yellow;
+		display: none;
+		width: 300px;
+		border: 2px dashed red;
+	}
+
+	p {
+		margin: 0;
+		padding: 20px 0 20px 0;
+	}
+	
+</style>
+<script>
+
+
+$(document).ready(function(){
+	show = true;
+
+	// Show and Hide
+	// $("#title").click(function(){		
+	// 	if (show){
+	// 		$(".row").hide();
+	// 		show = false;
+	// 	} else {
+	// 		$(".row").show();
+	// 		show = true;
+	// 	}
+	// });
+
+	// Toggle
+	// $("#title").click(function(){				
+	// 	$(".row").toggle();
+	// });
+
+	// Fade In and Out
+	// $("#title").click(function(){				
+	// 	// if (show){
+	// 	// 	$(".row").fadeOut(1000);
+	// 	// 	show = false;
+	// 	// } else {
+	// 	// 	$(".row").fadeIn(5000); // in ms
+	// 	// 	show = true;
+	// 	// }
+	// 	$(".row").fadeToggle(1000);
+	// });
+
+	// Slide Down and Up
+	// $("#title").click(function(){				
+	// 	// if (show){
+	// 	// 	$("#details").slideDown("slow");
+	// 	// 	show = false;
+	// 	// } else {
+	// 	// 	$("#details").slideUp(2000); // in ms
+	// 	// 	show = true;
+	// 	// }
+	// 	$("#details").slideToggle(2000);
+	// });
+
+	// Animate
+	$("#title").click(function(){				
+		$(".row").animate({
+				height: '100px',
+				fontSize: '30px',
+				color: 'blue'
+			}, 2000, function() {
+				/* stuff to do after animation is complete */
+				$("#details").slideDown("slow");
+			});;
+	});
+
+});
+
+
+</script>
+</head>
+
+<body>
+	<div id="table">
+		<table>
+			<tr id="title">
+				<th> ID </th><th>Name</th><th>Age</th>
+			</tr>			
+			<tr class="row">
+				<td> 1 </td><td>John Smith</td><td>20</td>
+			</tr>
+			<tr class="row">
+				<td> 2 </td><td>Amy Johnson</td><td>20</td>
+			</tr>
+			<tr class="row">
+				<td> 3 </td><td>Kevin Williams</td><td>20</td>
+			</tr>		
+		</table>
+	</div>
+
+	<div id = "details">
+		<p> This is a detail about these people...</p>
+	</div>
+
+	
+
+</body>
+</html>

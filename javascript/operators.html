@@ -1,0 +1,31 @@
+<html>
+<head>
+	<style type="text/css">
+		div {
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+
+<body>
+
+<div id="test1" class="t1">This is the first static line.</div>
+<div id="test2"></div>
+<div id="test3"></div>
+
+
+<script>
+x = document.getElementsByClassName("t1")[0].innerHTML;
+y = 3 
+console.log(x+y)
+
+n = '12345'
+document.getElementById("test2").innerHTML = n + " is a " + typeof(n);
+
+m = 12345
+document.getElementById("test3").innerHTML = m + " is a " + typeof(m);
+
+</script>
+
+</body>
+</html>

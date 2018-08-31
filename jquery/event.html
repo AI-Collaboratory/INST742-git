@@ -1,0 +1,71 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<style type="text/css">
+	#square {
+		margin-top: 20px;
+		margin-left: 100px;
+		height: 200px;
+		width: 200px;
+		background: orange;
+	}
+
+	#square:hover{
+		background: lightblue;
+	}
+
+	div {
+		margin-bottom: 20px;
+	}
+
+	.round {
+		border-radius: 20px;
+		background: gray;
+	}
+
+	#square:hover{
+		cursor: pointer;
+	}
+	
+</style>
+<script>
+
+// function show_sentence(){
+// 	document.getElementById("square").innerHTML = document.getElementsByTagName("p")[0].innerHTML;
+// }
+
+
+$(document).ready(function(){
+	// Click Event
+	// $("#square").click(function(){
+	// 	text = $("p").text();
+	// 	$("#square").html(text);
+	// });
+
+	// Mouseover Event
+	$("#square").mouseover(function(){
+		text = $("p").text();
+		$(this).html(text).addClass("round").css("background", "lightblue");
+
+	});	
+
+	// Mouseleave Event
+	$("#square").mouseleave(function(){		
+		$(this).html("").removeClass("round").css("background", "orange");
+	});	
+});
+
+
+</script>
+</head>
+
+<body>
+	<div id="square"></div>
+
+	<div>
+		<p> Hello, this is inside a PPPPP tag. </p>
+	</div>
+
+
+</body>
+</html>

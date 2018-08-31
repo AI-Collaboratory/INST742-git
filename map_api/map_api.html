@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>Leaflet Test</title>
+
+<link rel="stylesheet" href="leaflet/leaflet.css" />
+<link rel="stylesheet" href="css/global.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="leaflet/leaflet-src.js"></script>
+
+<!-- for Google Maps -->
+<script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
+<script src="http://matchingnotes.com/javascripts/leaflet-google.js"></script>
+
+<!-- Stamen basemap -->
+<script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.3"></script>
+
+
+<!-- Map Loading Scripts -->
+<script>
+
+$(document).ready(function($) {
+	// setting the default view point for the map, and the zoom level
+	var map = L.map('map').setView([38.8936, -77.0364], 14);	
+
+	// OpenStreetMap
+	var basemap = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+	});
+
+	// OpenStreetMap Black and White
+	// var basemap = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+	// 	maxZoom: 18,
+	// 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	// });
+
+	// Google Map
+	// var basemap = new L.Google('ROADMAP');
+
+	// If you want some artistic: Stamen Basemap
+	// var basemap = new L.StamenTileLayer(['watercolor']); // "toner", "watercolor"...
+
+
+	// Adding the basemap layer to the Leaflet container.
+	map.addLayer(basemap);
+
+
+	// // Adding Markers
+	var marker = L.marker([38.8936, -77.0364]).bindPopup("hello");
+	// var marker2 = L.marker([35.570, -82.550]);
+
+	// // Polygon
+	// var latlngs = [[35.580, -82.560],[35.581, -82.562],[35.583, -82.558]];
+	// var polygon = L.polygon(latlngs, {color: 'red'});
+	
+	// var cities = L.layerGroup([marker, marker2, polygon]);
+	map.addLayer(marker);
+});
+
+</script>
+</head>
+
+<body>
+	<div> Hello Map </div>
+	<div id="map"></div>
+</body>
+</html>

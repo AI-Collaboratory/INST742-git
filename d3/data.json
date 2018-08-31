@@ -1,0 +1,18 @@
+{
+  "nodes": [
+    {"id": "Lee", "group": 1},    
+    {"id": "David", "group": 2},
+    {"id": "Rachael", "group": 2},
+    {"id": "John", "group": 3},
+    {"id": "Tom", "group": 3},    
+    {"id": "Peter", "group": 4}    
+  ],
+  "links": [
+    {"source": "Lee", "target": "David", "value": 4},
+    {"source": "David", "target": "Rachael", "value": 8},
+    {"source": "John", "target": "Rachael", "value": 20},
+    {"source": "Lee", "target": "Tom", "value": 6},
+    {"source": "Tom", "target": "Rachael", "value": 6},
+    {"source": "Peter", "target": "Lee", "value": 9}    
+  ]
+}
