@@ -1,0 +1,65 @@
+SELECT pg.created, pg.author, bd.host_type as type, pg.title, bd.body_text
+FROM page AS pg
+JOIN body AS bd ON pg.id = bd.host_id
+WHERE pg.id = 1 AND bd.host_type = "P" ;
+
+
+
+SELECT MAX(revision)
+FROM body
+WHERE host_id = 1 AND host_type = "P";
+
+
+
+SELECT pg.created, pg.author, bd.host_type as type, pg.title, bd.body_text
+FROM page AS pg
+JOIN body AS bd ON pg.id = bd.host_id
+WHERE pg.id = 1 AND bd.host_type = "P" AND bd.revision = (
+  SELECT max(revision)
+  FROM body
+  WHERE host_id = 1 AND host_type = "P"
+);
+
+
+
+SELECT co.created, co.author, bd.host_type AS type, co.title, bd.body_text
+FROM comment AS co
+JOIN body AS bd ON co.id = bd.host_id
+WHERE co.page_id = "1" AND bd.host_type = "C" AND bd.revision = (
+  SELECT max(revision)
+  FROM body
+  WHERE host_id = co.id AND host_type="C"
+);
+
+
+SELECT pg.created, pg.author, bd.host_type as type, pg.title, bd.body_text
+    FROM page AS pg
+    JOIN body AS bd ON pg.id = bd.host_id
+    WHERE pg.id = 1 AND bd.host_type = "P" AND bd.revision = (
+      SELECT max(revision)
+      FROM body
+      WHERE host_id = 1 AND host_type = "P"
+    )
+UNION
+SELECT co.created, co.author, bd.host_type AS type, co.title, bd.body_text
+    FROM comment AS co
+    JOIN body AS bd ON co.id = bd.host_id
+    WHERE co.page_id = 1 AND bd.host_type = "C" AND bd.revision = (
+      select max(revision)
+      FROM body
+      WHERE host_id = co.id AND host_type="C"
+);
+
+
+
+CREATE VIEW page1_view AS SELECT * FROM (
+  SELECT pg.created, pg.author, bd.revision, bd.host_type as type, pg.title, bd.body_text
+      FROM page AS pg
+      JOIN body AS bd ON pg.id = bd.host_id
+      WHERE pg.id = 1 AND bd.host_type = "P"  
+  UNION
+  SELECT co.created, co.author, bd.revision, bd.host_type AS type, co.title, bd.body_text
+      FROM comment AS co
+      JOIN body AS bd ON co.id = bd.host_id
+      WHERE co.page_id = 1 AND bd.host_type = "C" 
+) AS my_derived_table;
