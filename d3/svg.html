@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	svg {
+		background-color: black;
+	}
+	#effect{
+		background-color: blue;	
+	}
+	</style>
+</head>
+
+<body>
+
+<h1>SVG Intro</h1>
+
+<svg width="500" height="500">  
+	<circle cx="100" cy="300" r="40" stroke="blue" stroke-width="20" fill="yellow" />
+
+	<ellipse cx="200" cy="40" rx="100" ry="40" stroke="white" stroke-width="3" fill="red" />
+
+	<polygon points="200,10 250,190 160,210" style="fill:green;stroke:purple;stroke-width:5;" />
+
+	<line x1="200" y1="200" x2="400" y2="500" style="stroke:rgb(255,0,0);stroke-width:5" />
+
+	<polyline points="100,120 120,140 200,180" style="fill:none;stroke:orange;stroke-width:3" />
+
+	<a href="http://yelp.com">
+		<rect x="300" y="400" width="180" height="90" style="fill:white;stroke-width:3;stroke:yellow" />
+	</a>
+
+	<!-- rotate (degree vertical_position,horizontal_position) -->
+	<a href="http://google.com">
+		<text x="100" y="250" font-size="50" fill="yellow" transform="rotate(10 20,60)">SVG-based TEXT!</text>
+	</a>
+</svg>
+
+<svg id="effect" width="300" height="300">
+	<defs>
+		<filter id="gaussian">
+		  <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
+		</filter>
+	</defs>
+	<line x1="0" y1="0" x2="100" y2="50" style="stroke:yellow;stroke-width:2" filter="url(#gaussian)" />
+	<circle cx="100" cy="250" r="40" stroke="blue" stroke-width="3" fill="yellow" filter="url(#gaussian)" />
+</svg>
+
+
+</body>
+</html>

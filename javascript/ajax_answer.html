@@ -1,0 +1,95 @@
+<html>
+<head>
+	<style type="text/css">
+		#square {
+			margin-top: 20px;
+			margin-left: 100px;
+			height: 200px;
+			width: 200px;
+			background: orange;
+		}
+
+		div {
+			margin-bottom: 20px;
+		}
+
+		.round {
+			border-radius: 20px;
+		}
+
+		#square:hover{
+			cursor: pointer;
+		}
+		
+	</style>
+</head>
+
+<body>
+	
+	<!-- <div id="square" onclick="showSentence()"></div> -->
+	<div id="square" onclick="trigger()"></div>
+
+	<div>
+		<p> Hello, this is inside a PPPPP tag. </p>
+	</div>
+
+
+<script>
+
+// function showSentence(){
+// 	var xhttp = new XMLHttpRequest();
+// 	xhttp.onreadystatechange = function() {
+// 		if (this.readyState == 4 && this.status == 200) {
+// 			document.getElementById("square").innerHTML = this.responseText;
+// 		}
+// 	};
+// 	xhttp.open("GET", "test.txt", true);
+// 	xhttp.send();
+// }
+
+
+function trigger(){
+	showSentence("json/data.json", test1);
+}
+
+function showSentence(url, func){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			func(this);
+		}
+	};
+	xhttp.open("GET", url, true);
+	xhttp.send();
+}
+
+function test1(xhttps){	
+	// parsing JSON
+	var objects = JSON.parse(xhttps.responseText);
+	var t = "<div>";
+	
+	// looping througoh the object
+	for (key in objects){		
+		for (k in objects[key]){
+			t+= "<div class='row'><span><strong>" + k + "</strong></span>:<span>" + objects[key][k] + "</span></div>";
+		}		
+	}
+	t += "</div>";
+	
+	// put the generated text
+	document.getElementById("square").innerHTML = t;
+
+	// change the square size dynamically 
+	document.getElementById("square").setAttribute("style", "height:auto; width:auto;");
+	
+}
+
+function test2(xhttps){
+	document.getElementById("square").innerHTML = xhttps.responseText;
+	document.getElementById("square").style.color = "green";
+}
+
+</script>
+
+</body>
+</html>

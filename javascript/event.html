@@ -1,0 +1,46 @@
+<html>
+<head>
+	<style type="text/css">
+		#square {
+			margin-top: 20px;
+			margin-left: 100px;
+			height: 200px;
+			width: 200px;
+			background: orange;
+		}
+
+		div {
+			margin-bottom: 20px;
+		}
+
+		.round {
+			border-radius: 20px;
+		}
+
+		#square:hover{
+			cursor: pointer;
+		}
+		
+	</style>
+</head>
+
+<body>
+	<div id="square" onclick="show_sentence()"></div>
+
+	<div>
+		<p> Hello, this is inside a PPPPP tag. </p>
+	</div>
+
+	<!-- for your exercise, comment this line out.  -->
+	<!-- <button onclick="show_sentence()">Put the Sentence</button> -->
+
+<script>
+
+function show_sentence(){
+	document.getElementById("square").innerHTML = document.getElementsByTagName("p")[0].innerHTML;
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style type="text/css">
+
+	div{
+		margin: 0px 0px 0px 40px;	
+		font-size: 20px;	
+		width: 200px;
+	}
+
+	table td, th {
+		border: 1px solid black;
+		cursor: pointer;
+		padding: 5px 5px 5px 5px;
+	}
+	table {
+		width: 305px;
+
+	}
+
+	th {
+		background: gray;
+	}
+
+	th:hover{
+		cursor: pointer;
+	}
+
+	p {
+		margin: 0;
+		padding: 20px 0 20px 0;
+	}
+
+	.added {
+		background: yellow;
+		border: 1px solid blue;
+	}
+
+	#find {
+		background: orange;
+		border: 1px solid black;
+		text-align: center;
+		cursor: pointer;
+		margin-top: 20px;
+	}
+	#form {
+		margin-top: 10px;
+	}
+
+	
+</style>
+<script>
+
+
+$(document).ready(function(){
+
+	$("#find").click(function(){
+		// form_value = document.forms["form"]["search"].value;
+		form_value = $("#form input").val();
+
+		$("td:contains("+ form_value+ ")").css("background", "red"); // finding an element based on contents
+		
+	})
+
+});
+
+
+</script>
+</head>
+
+<body>
+	<div id="table">
+		<table>
+			<tr id="title">
+				<th> ID </th><th>Name</th><th>Age</th>
+			</tr>			
+			<tr class="row">
+				<td> 1 </td><td>John Smith</td><td>20</td>
+			</tr>
+			<tr class="row">
+				<td> 2 </td><td>Amy Johnson</td><td>20</td>
+			</tr>
+			<tr class="row">
+				<td> 3 </td><td>Kevin Williams</td><td>20</td>
+			</tr>		
+		</table>
+	</div>
+	<div id="find">FIND</div>
+	<div>
+		<form id="form" name="form">
+			<input type="text" name="search" value="">
+		</form>
+	</div>
+
+	
+
+</body>
+</html>
